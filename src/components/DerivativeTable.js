@@ -19,7 +19,7 @@ import {
 import axios from "axios";
 import { DerivativeList } from "../config/api";
 import { useHistory } from "react-router-dom";
-import { CryptoState } from "../CryptoContext";
+import { CryptoState } from "../CryptoContextAPI";
 import { numberWithCommas, nullInputReturn, toFixed_ } from "../components/CoinsTable";
 
 export default function DerivativeTable() {
@@ -32,16 +32,16 @@ export default function DerivativeTable() {
 
     const useStyles = makeStyles({
         row: {
-            backgroundColor: "white",
+            backgroundColor: "#F6FFF8",
             cursor: "pointer",
             "&:hover": {
-                backgroundColor: "cadetblue",
+                backgroundColor: "#0077b6",
             },
             fontFamily: "Inter",
         },
         pagination: {
             "& .MuiPaginationItem-root": {
-                color: "cadetblue",
+                color: "#0077b6",
             },
         },
     });
@@ -97,15 +97,15 @@ export default function DerivativeTable() {
                 />
                 <TableContainer component={Paper}>
                     {loading ? (
-                        <LinearProgress style={{ backgroundColor: "cadetblue" }} />
+                        <LinearProgress style={{ backgroundColor: "#0077b6" }} />
                     ) : (
                         <Table aria-label="simple table">
-                            <TableHead style={{ backgroundColor: "cadetblue" }}>
+                            <TableHead style={{ backgroundColor: "#0077b6" }}>
                                 <TableRow>
                                     {["Market", "Symbol", "Index_ID", "Price", "Price % Change 24h", "Contract Type", "Index", "Basis", "Spread", "Funding Rate", "Vol 24h", "Expired On"].map((head) => (
                                         <TableCell
                                             style={{
-                                                color: "black",
+                                                color: "white",
                                                 fontWeight: "700",
                                                 fontFamily: "Inter",
                                             }}

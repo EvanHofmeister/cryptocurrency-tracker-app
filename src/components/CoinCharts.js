@@ -8,14 +8,14 @@ import {
   makeStyles,
   ThemeProvider, Typography,
 } from "@material-ui/core";
-import SelectButton from "./SelectButton";
+import Buttons from "./Buttons";
 import { chartDays } from "../config/data";
-import { CryptoState } from "../CryptoContext";
+import { CryptoState } from "../CryptoContextAPI";
 
 // Historical data hooks
 
 
-const CoinInfo = ({ coin }) => {
+const CoinCharts = ({ coin }) => {
   const [historicData_Price, setHistoricData_Price] = useState();
   const [historicData_MarketCap, setHistoricData_MarketCap] = useState();
   const [historicData_TotalVol, setHistoricData_TotalVol] = useState();
@@ -41,7 +41,7 @@ const CoinInfo = ({ coin }) => {
     },
     title: {
       flex: 1,
-      color: "cadetblue",
+      color: "#0077b6",
       fontFamily: "Inter",
       fontWeight: "bold",
       cursor: "pointer",
@@ -84,7 +84,7 @@ const CoinInfo = ({ coin }) => {
         <div className={classes.container}>
           {!historicData_Price | flag===false ? (
               <CircularProgress
-                  style={{ color: "cadetblue" }}
+                  style={{ color: "#0077b6" }}
                   size={250}
                   thickness={1}
               />
@@ -96,11 +96,11 @@ const CoinInfo = ({ coin }) => {
                       marginTop: 0,
                       justifyContent: "space-around",
                       width: "100%",
-                      color: "black"
+                      color: "#0077b6"
                     }}
                 >
                   {chartDays.map((day) => (
-                      <SelectButton
+                      <Buttons
                           key={day.value}
                           onClick={() => {setDays(day.value);
                             setFlag(false);
@@ -108,7 +108,7 @@ const CoinInfo = ({ coin }) => {
                           selected={day.value === days}
                       >
                         {day.label}
-                      </SelectButton>
+                      </Buttons>
                   ))}
                 </div>
               </>
@@ -119,7 +119,7 @@ const CoinInfo = ({ coin }) => {
       <div className={classes.container}>
         {!historicData_Price | flag===false ? (
           <CircularProgress
-            style={{ color: "cadetblue" }}
+            style={{ color: "#0077b6" }}
             size={250}
             thickness={1}
           />
@@ -173,7 +173,7 @@ const CoinInfo = ({ coin }) => {
       <div className={classes.container}>
         {!historicData_MarketCap | flag===false ? (
             <CircularProgress
-                style={{ color: "cadetblue" }}
+                style={{ color: "#0077b6" }}
                 size={250}
                 thickness={1}
             />
@@ -226,7 +226,7 @@ const CoinInfo = ({ coin }) => {
       <div className={classes.container}>
         {!historicData_TotalVol | flag===false ? (
             <CircularProgress
-                style={{ color: "cadetblue" }}
+                style={{ color: "#0077b6" }}
                 size={250}
                 thickness={1}
             />
@@ -282,4 +282,4 @@ const CoinInfo = ({ coin }) => {
 
 };
 
-export default CoinInfo;
+export default CoinCharts;

@@ -1,9 +1,9 @@
 import { Container, makeStyles, Typography } from "@material-ui/core";
-import Carousel from "./Carousel";
+import BannerCarousel from "./BannerCarousel";
 
 const useStyles = makeStyles((theme) => ({
   banner: {
-    backgroundImage: "url(./banner2.jpg)",
+    backgroundImage: "url(./Poly_crop.png)",
   },
   bannerContent: {
     height: 400,
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Banner() {
+function BannerText() {
   const classes = useStyles();
 
   return (
@@ -39,6 +39,7 @@ function Banner() {
               fontWeight: "bold",
               marginBottom: 15,
               fontFamily: "Inter",
+              color: "#f6ae2d"
             }}
           >
             Cryptocurrency Dashboard
@@ -46,18 +47,18 @@ function Banner() {
           <Typography
             variant="subtitle2"
             style={{
-              color: "darkgrey",
+              color: "#f6ae2d",
               textTransform: "capitalize",
               fontFamily: "Inter",
             }}
           >
-            Get all the Info regarding your favorite Crypto Currency
+            Find information on your favorite Cryptocurrency
           </Typography>
         </div>
-        <Carousel />
+        <BannerCarousel />
       </Container>
     </div>
   );
 }
 
-export default Banner;
+export default BannerText;

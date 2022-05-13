@@ -1,5 +1,5 @@
 import React from "react";
-import Banner from "../components/Banner/Banner";
+import BannerText from "../components/Banner/BannerText";
 import CoinsTable from "../components/CoinsTable";
 import ExchangeTable from "../components/ExchangeTable";
 import IndexTable from "../components/IndexTable";
@@ -7,7 +7,7 @@ import DerivativeTable from "../components/DerivativeTable";
 import {
     Tabs,
     Tab,
-    AppBar,
+    AppBar, MuiThemeProvider, makeStyles
 } from "@material-ui/core";
 
 
@@ -23,32 +23,54 @@ function TabPanel(props)
         </div>)
 };
 
+
+const useStyles = makeStyles((theme) => ({
+    customLabelColor: {
+        color: "white",
+        backgroundColor: "#0077b6"
+    },
+    tabLabelColor: {
+        color: "white",
+    }
+}));
+
+
 const Homepage = () => {
     const [value, setValue] = React.useState(0);
-
+    const classes = useStyles();
     const handleChange=(e,value)=>{
         console.warn(value)
         setValue(value)
+
+
     };
 
   return (
         <div>
-            <AppBar position={"static"}>
+            <AppBar position={"static"} classes={{
+                root: classes.customLabelColor}}>
                 <Tabs
                     value={value}
                     onChange={handleChange}
-                    textColor="secondary"
-                    indicatorColor="secondary"
-                    aria-label="secondary tabs example"
+
+                    TabIndicatorProps={{
+                        style: {background: "#f6ae2d", height: "10px", top: "35px",color: "#0077b6",
+                            fontFamily: "Inter",
+                            fontWeight: "bold", }
+                    }}
+
+
+
                 >
-                    <Tab label="Crypto" />
+                >
+                    <Tab label="Crypto" color={classes.tabLabelColor}/>
                     <Tab label="Derivative" />
                     <Tab label="Exchange" />
                     <Tab label="Index" />
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index={0}>
-                <Banner />
+                <BannerText />
                 <CoinsTable />
             </TabPanel>
             <TabPanel value={value} index={1}>

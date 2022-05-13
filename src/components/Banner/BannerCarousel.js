@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
 import { TrendingCoins } from "../../config/api";
-import { CryptoState } from "../../CryptoContext";
+import { CryptoState } from "../../CryptoContextAPI";
 import { numberWithCommas } from "../CoinsTable";
 
-const Carousel = () => {
+const BannerCarousel = () => {
   const [trending, setTrending] = useState([]);
   const { currency, symbol } = CryptoState();
 
@@ -98,4 +98,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default BannerCarousel;

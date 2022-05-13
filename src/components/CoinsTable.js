@@ -19,7 +19,7 @@ import {
 import axios from "axios";
 import { CoinList } from "../config/api";
 import { useHistory } from "react-router-dom";
-import { CryptoState } from "../CryptoContext";
+import { CryptoState } from "../CryptoContextAPI";
 
 export function numberWithCommas(x) {
   if (x != null) {
@@ -29,6 +29,7 @@ export function numberWithCommas(x) {
     return " N/A ";
   }
 }
+
 
 export function nullInputReturn(x) {
   if (x != null) {
@@ -61,13 +62,13 @@ export default function CoinsTable() {
       backgroundColor: "white",
       cursor: "pointer",
       "&:hover": {
-        backgroundColor: "cadetblue",
+        backgroundColor: "#0077b6",
       },
       fontFamily: "Inter",
     },
     pagination: {
       "& .MuiPaginationItem-root": {
-        color: "cadetblue",
+        color: "#0077b6",
       },
     },
   });
@@ -123,15 +124,15 @@ export default function CoinsTable() {
         />
         <TableContainer component={Paper}>
           {loading ? (
-            <LinearProgress style={{ backgroundColor: "cadetblue" }} />
+            <LinearProgress style={{ backgroundColor: "#0077b6" }} />
           ) : (
             <Table aria-label="simple table">
-              <TableHead style={{ backgroundColor: "cadetblue" }}>
+              <TableHead style={{ backgroundColor: "#0077b6" }}>
                 <TableRow>
                   {["Coin", "Price", "24h Change", "Market Cap", "Circulating Supply", "Total Supply", "ATH", "% Change from ATH"].map((head) => (
                     <TableCell
                       style={{
-                        color: "black",
+                        color: "white",
                         fontWeight: "700",
                         fontFamily: "Inter",
                       }}

@@ -3,12 +3,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import CoinInfo from "../components/CoinInfo";
+import CoinCharts from "../components/CoinCharts";
 import { SingleCoin } from "../config/api";
 import { numberWithCommas } from "../components/CoinsTable";
-import { CryptoState } from "../CryptoContext";
+import { CryptoState } from "../CryptoContextAPI";
 
-const CoinPage = () => {
+const CoinDetailPage = () => {
   const { id } = useParams();
   const [coin, setCoin] = useState();
 
@@ -31,14 +31,14 @@ const CoinPage = () => {
       [theme.breakpoints.down("md")]: {
         flexDirection: "column",
         alignItems: "center",
-        color: "black"
+        color: "white"
       },
     },
     sidebar: {
       width: "30%",
       [theme.breakpoints.down("md")]: {
         width: "100%",
-        color: "black"
+        color: "white"
       },
       display: "flex",
       flexDirection: "column",
@@ -85,7 +85,7 @@ const CoinPage = () => {
 
   const classes = useStyles();
 
-  if (!coin) return <LinearProgress style={{ backgroundColor: "cadetblue" }} />;
+  if (!coin) return <LinearProgress style={{ backgroundColor: "#0077b6" }} />;
 
   return (
     <div className={classes.container}>
@@ -293,9 +293,9 @@ const CoinPage = () => {
 
         </div>
       </div>
-      <CoinInfo coin={coin} />
+      <CoinCharts coin={coin} />
     </div>
   );
 };
 
-export default CoinPage;
+export default CoinDetailPage;

@@ -12,12 +12,12 @@ import {
   ThemeProvider,
 } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-import { CryptoState } from "../CryptoContext";
+import { CryptoState } from "../CryptoContextAPI";
 
 const useStyles = makeStyles((theme) => ({
   title: {
     flex: 1,
-    color: "cadetblue",
+    color: "#0077b6",
     fontFamily: "Inter",
     fontWeight: "bold",
     cursor: "pointer",
