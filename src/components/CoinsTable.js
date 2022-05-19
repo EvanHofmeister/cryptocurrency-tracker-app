@@ -112,9 +112,8 @@ export default function CoinsTable() {
       <Container style={{ textAlign: "center" }}>
         <Typography
           variant="h4"
-          style={{ margin: 18, fontFamily: "Inter" }}
+          style={{ margin: 0, fontFamily: "Inter" }}
         >
-          Cryptocurrency Prices by Market Cap
         </Typography>
         <TextField
           label="Search For a Crypto Currency.."

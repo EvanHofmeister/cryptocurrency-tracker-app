@@ -35,7 +35,7 @@ const BannerCarousel = () => {
       alignItems: "center",
       cursor: "pointer",
       textTransform: "uppercase",
-      color: "white",
+      color: "black",
     },
   }));
 
