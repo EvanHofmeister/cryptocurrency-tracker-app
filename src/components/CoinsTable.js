@@ -23,7 +23,12 @@ import { CryptoState } from "../CryptoContextAPI";
 
 export function numberWithCommas(x) {
   if (x != null) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    if (x > 1000) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    else{
+      return x;
+    }
   }
   else{
     return " N/A ";

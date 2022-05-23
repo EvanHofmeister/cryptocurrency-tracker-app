@@ -211,7 +211,7 @@ const CoinDetailPage = () => {
             >
               {numberWithCommas(
                   coin?.market_data?.total_supply
-                      ?.toString()
+                      ?.toFixed(0).toString()
               )}
             </Typography>
           </span>
