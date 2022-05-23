@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20d60da5-29ca-461c-96b5-d0111f84accf" name="Changes" comment="Update to structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Banner/BannerCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Banner/BannerCarousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CoinsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CoinsTable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +80,8 @@
       <workItem from="1650944807794" duration="3097000" />
       <workItem from="1651685650791" duration="23467000" />
       <workItem from="1652978987274" duration="579000" />
+      <workItem from="1653104043774" duration="9000" />
+      <workItem from="1653266660725" duration="353000" />
     </task>
     <task id="LOCAL-00001" summary="Update to structure">
       <created>1652422859191</created>
